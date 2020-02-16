@@ -15,7 +15,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: image
+  IMAGE_NAME: node-imagemagik
 
 jobs:
 
@@ -37,7 +37,7 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE_ID=docker.pkg.github.com/brandoncookedev/docker-node-imagemagik
+          IMAGE_ID=docker.pkg.github.com/brandoncookedev/docker-node-imagemagik/$IMAGE_NAME
 
           # Strip git ref prefix from version
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
